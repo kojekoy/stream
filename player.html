@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <link href="https://vjs.zencdn.net/5.7.1/video-js.css" rel="stylesheet">
+        <script src="https://vjs.zencdn.net/5.7.1/video.js"></script>
+        <script src="https://videojs.github.io/videojs-contrib-hls/node_modules/videojs-contrib-hls/dist/videojs.hls.min.js"></script>
+	<script src="http://cdn.dashjs.org/latest/dash.all.min.js"></script>
+    </head>
+    <body>
+        <p>Video HLS</p>
+
+        <video id=autoplay width="720" height="360" class="video-js vjs-default-skin vjs-big-play-centered" controls>
+            <source src="http://127.0.0.1:8080/hls/stream.m3u8" type="application/x-mpegURL">
+        </video>
+	<p>Video DASH </p>
+	 <video data-dashjs-player
+         width="720" height="360" controls autoplay
+         src="http://127.0.0.1:8080/dash/stream/index.mpd">
+ 	 </video>
+        <script>
+            var player = videojs('autoplay');
+            player.play();
+        </script>
+
+    </body>
+</html>
+
